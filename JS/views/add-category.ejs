@@ -1,0 +1,12 @@
+<%- include('./partials/header.ejs', {title: 'E-Sembako - Add Category'})  -%>
+<div class="container body-panel">
+    <form id="add-form" method="POST" action="/sellers/add-category">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Masukan nama kategori</label>
+            <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="add-10-margin"></div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<%- include('./partials/footer.ejs') -%>

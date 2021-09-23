@@ -1,0 +1,54 @@
+<%- include('./partials/header.ejs', {title: 'E-Sembako - Add Product'})  -%>
+<div class="container body-panel">
+    <form id="add-form" action="/sellers/add-product" method="POST">
+        <div class="form-group">
+          <label class="bold" for="exampleFormControlInput1">Nama Produk</label>
+          <input name="name" type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group" id="cat-select">
+          <label class="bold" for="exampleFormControlSelect2">Pilih Kategori</label><br>
+          <select name="CategoryId">
+              <% categories.forEach(cat => { %>
+                <option value="<%= cat.id %>"><%= cat.name %></option>
+              <% }) %>
+          </select>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <label class="bold" for="">Harga</label>
+                  <input name="price" type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label class="bold" for="">Stock</label>
+                  <input name="stock" type="text" class="form-control">
+                </div>
+              </div>
+        </div>
+        <div class="form-group">
+          <label class="bold" for="exampleFormControlTextarea1">Deskripsi Produk</label>
+          <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+        </div>
+        <div class="form-group add-10-margin">
+            <div class="row">
+                <div class="col">
+                    <label class="add-10-margin bold" for="">Image URL</label>
+                    <input name="imageUrl" type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label class="add-10-margin bold" for="">Video URL (Jika ada)</label>
+                    <input name="videoUrl" type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label class="add-10-margin bold" for="">Berat (gram)</label>
+                    <input name="weight" type="text" class="form-control">
+                </div>
+              </div>
+        </div>
+        <div class="form-group add-10-margin">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="#" class="btn btn-secondary btn-md active" role="button" aria-pressed="true">Cancel</a>
+        </div>
+      </form>
+</div>
+<%- include('./partials/footer.ejs') -%>

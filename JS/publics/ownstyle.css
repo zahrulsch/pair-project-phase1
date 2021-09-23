@@ -1,0 +1,30 @@
+#add-form {
+    width: 80%;
+    margin: 100px auto;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#cat-select {
+    margin: 5px 0;
+}
+
+#cat-select select {
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #ced4da;
+}
+
+.form-group > label {
+    margin: 5px 0;
+}
+
+.body-panel {
+    min-height: 70vh;
+}
+
+.add-10-margin {
+    margin: 10px auto;
+}
