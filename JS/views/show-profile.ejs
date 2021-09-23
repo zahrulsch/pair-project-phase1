@@ -1,0 +1,32 @@
+<%- include('./partials/header', {title: 'E-Sembako', categories: undefined, sellerId: sellerId})-%>
+        
+<div style="min-height: 70vh;" class="container body-panel">
+    <div style="margin-top: 75px;" class="row justify-content-center">
+        <div class="col-9">
+            <dl class="row">
+                <dt class="col-sm-3">Nama Lengkap</dt>
+                <dd class="col-sm-9"><%= user.fullName  %> </dd>
+              
+                <dt class="col-sm-3">Tanggal Lahir</dt>
+                <dd class="col-sm-9"><%= user.dateOfBirth %></dd>
+              
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9"><%= user.email %></dd>
+              
+                <dt class="col-sm-3">Kota Asal</dt>
+                <dd class="col-sm-9"><%= user.address  %> </dd>
+              
+                <dt class="col-sm-3">Nomer HP</dt>
+                <dd class="col-sm-9"><%= user.phone %></dd>
+              </dl>
+        </div>
+        <div class="col-3">
+            <div class="d-flex justify-content-center">
+                <img src="<%= user.imageUrl %>" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('./partials/footer') -%> 

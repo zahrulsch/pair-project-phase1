@@ -1,6 +1,6 @@
-<%- include('./partials/header.ejs', {title: 'E-Sembako - Add Category'})  -%>
+<%- include('./partials/header.ejs', {title: 'E-Sembako - Add Category', categories: undefined, sellerId: sellerId})  -%>
 <div class="container body-panel">
-    <form id="add-form" method="POST" action="/sellers/add-category">
+    <form id="add-form" method="POST" action="/sellers/<%= sellerId %>/add-category">
         <div class="form-group">
             <label for="exampleInputEmail1">Masukan nama kategori</label>
             <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

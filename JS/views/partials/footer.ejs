@@ -3,6 +3,29 @@
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
         </footer>
+        <script>
+            let sourcePic = document.querySelector('#source-pic')
+            let targetPic = document.querySelector('#target-pic')
+
+            sourcePic.addEventListener('change', () => {
+                targetPic.src = sourcePic.value
+            })
+
+            let previewer = document.querySelector('#video-previewer')
+            let sourceVideo = document.querySelector('#source-video')
+            let targetVideo = document.querySelector('#target-video')
+            console.log(sourceVideo.value)
+            if (sourceVideo.value === '' || !sourceVideo.value) {
+                previewer.style.display = 'none'
+            } 
+
+            sourceVideo.addEventListener('change', () => {
+                targetVideo.src = sourceVideo.value
+                setTimeout(() => {
+                    previewer.style.display = ''
+                }, 1000)
+            })
+        </script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

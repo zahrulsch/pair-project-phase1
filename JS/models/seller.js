@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const bcrypt = require('bcryptjs')
 module.exports = (sequelize, DataTypes) => {
   class Seller extends Model {
     /**
@@ -16,9 +17,34 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Seller.init({
-    name: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Username tidak boleh kosong'
+        }
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Password tidak boleh kosong'
+        }
+      }
+    },
     totalProduct: DataTypes.INTEGER
   }, {
+    hooks: {
+      beforeCreate: (attr, options) => {
+        let salt = bcrypt.genSaltSync(10)
+        let hashedPassword = bcrypt.hashSync(attr.password, salt)
+        attr.password = hashedPassword
+        attr.totalProduct = 0
+      }
+    },
     sequelize,
     modelName: 'Seller',
   });

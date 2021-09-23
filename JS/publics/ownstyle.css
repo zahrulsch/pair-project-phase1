@@ -2,6 +2,16 @@
     width: 80%;
     margin: 100px auto;
 }
+#media-preview {
+    margin-top: 100px;
+}
+#logout {
+    text-decoration: none;
+    padding: 5px;
+    color: white;
+    border-radius: 8px;
+    background-color: grey;
+}
 
 .bold {
     font-weight: bold;

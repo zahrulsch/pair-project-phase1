@@ -1,6 +1,6 @@
-<%- include('./partials/header.ejs', {title: 'E-Sembako - Add Product'})  -%>
+<%- include('./partials/header.ejs', {title: 'E-Sembako - Add Product', sellerId: sellerId})  -%>
 <div class="container body-panel">
-    <form id="add-form" action="/sellers/add-product" method="POST">
+    <form id="add-form" action="/sellers/<%= sellerId %>/add-product" method="POST">
         <div class="form-group">
           <label class="bold" for="exampleFormControlInput1">Nama Produk</label>
           <input name="name" type="text" class="form-control" id="exampleFormControlInput1">
